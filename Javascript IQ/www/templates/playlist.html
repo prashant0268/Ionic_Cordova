@@ -1,0 +1,163 @@
+<ion-view view-title="{{cordovaFeatureName}}">
+  <ion-content>
+        <div class="list card " ng-if="cordovaFeatureName=='Battery'" id="page2-card21">
+            <ion-item id="page2-list-item9" class="  ">Battery</ion-item>
+            <div class="item item-body " id="page2-list-item-container1">
+                <h2 id="page2-heading3" style="color:#000000;text-align:center;" class=" ">Current Battery Percentage</h2>
+                <h1 id="page2-heading4" style="color:#C71515;text-align:center;" class=" "> {{batteryPercentage}} %</h1>
+                <ion-list id="page2-list3" class=" ">
+                    <ion-item class="item-icon-left assertive  " id="page2-list-item12" ng-if="isBatteryLow==true">
+                        <i class="icon ion-information-circled"></i>Battery Low</ion-item>
+                    <ion-item class="item-icon-left assertive  " id="page2-list-item13" ng-if="isBatteryCritical==true">
+                        <i class="icon ion-information-circled"></i>Battery Critical</ion-item>
+                </ion-list>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='Camera'" id="page2-card23">
+            <ion-item id="page2-list-item15" class="  ">Camera</ion-item>
+            <div class="item item-body " id="page2-list-item-container3">
+                <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
+                    <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+                </div>
+                <button id="page2-button2" ng-click="takePicture()" class=" button button-positive  button-block ">Take Picture</button>
+                <button id="page2-button15" ng-click="choosePicture()" class=" button button-positive  button-block ">Choose From Gallery</button>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='Contacts'" id="page2-card24">
+            <ion-item id="page2-list-item16" class="  ">Contacts</ion-item>
+            <div class="item item-body " id="page2-list-item-container4">
+                <p id="page2-markdown15" style="margin-top:0px;color:#000000;" class=" ">Search a contact - Only first 3</p>
+                <form id="page2-form1" class="list ">
+                    <label class="item item-input " id="page2-input1">
+                        <span class="input-label">Name</span>
+                        <input type="text" placeholder="Search Contact">
+                    </label>
+                </form>
+                <ion-list id="page2-list4" class=" ">
+                    <ion-item id="page2-list-item14" class="  ">Item 1</ion-item>
+                    <ion-item id="page2-list-item28" class="  ">Item 2</ion-item>
+                    <ion-item id="page2-list-item29" class="  ">Item 3</ion-item>
+                </ion-list>
+                <button id="page2-button16" class=" button button-positive  button-block ">Pick a Contact</button>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='Device'" id="page2-card25">
+            <ion-item id="page2-list-item17" class="  ">Device</ion-item>
+            <div class="item item-body " id="page2-list-item-container5">
+                <p id="page2-markdown3" style="margin-top:0px;color:#000000;" class=" ">Device Information :</p>
+                <form id="page2-form2" class="list ">
+                    <label class="item item-input " id="page2-input2">
+                        <span class="input-label">Model</span>
+                        <input type="text" placeholder="" value="{{deviceInfo.model}}">
+                    </label>
+                    <label class="item item-input " id="page2-input3">
+                        <span class="input-label">Platform</span>
+                        <input type="text" placeholder="" value="{{deviceInfo.platform}}">
+                    </label>
+                    <label class="item item-input " id="page2-input4">
+                        <span class="input-label">UUID</span>
+                        <input type="text" placeholder="" value="{{deviceInfo.uuid}}">
+                    </label>
+                    <label class="item item-input " id="page2-input5">
+                        <span class="input-label">Version</span>
+                        <input type="text" placeholder="" value="{{deviceInfo.version}}">
+                    </label>
+                    <label class="item item-input " id="page2-input6">
+                        <span class="input-label">Manufacturer</span>
+                        <input type="text" placeholder="" value="{{deviceInfo.manufacturer}}">
+                    </label>
+                    <label class="item item-input " id="page2-input7">
+                        <span class="input-label">Serial</span>
+                        <input type="text" placeholder="" value="{{deviceInfo.serial}}">
+                    </label>
+                </form>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='Device Orientation'" id="page2-card26">
+            <ion-item id="page2-list-item18" class="  ">Device Orientation</ion-item>
+            <div class="item item-body " id="page2-list-item-container6">
+                <p id="page2-markdown4" style="margin-top:0px;color:#000000;" class=" ">Current Direction is
+                    <strong>XXX, XXX</strong>
+                </p>
+                <button id="page2-button5" class=" button button-positive  button-block ">Get Current Direction</button>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='File'" id="page2-card28">
+            <ion-item id="page2-list-item20" class="  ">File</ion-item>
+            <div class="item item-body " id="page2-list-item-container8">
+                <button id="page2-button7" class=" button button-positive  button-block ">Create File</button>
+                <button id="page2-button17" class=" button button-positive  button-block ">Create Temporary file</button>
+                <button id="page2-button18" class=" button button-positive  button-block ">Read Temporary File</button>
+                <button id="page2-button19" class=" button button-positive  button-block ">Write to Temporary File</button>
+                <button id="page2-button20" class=" button button-positive  button-block ">Create Directory</button>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='File Transfer'" id="page2-card29">
+            <ion-item id="page2-list-item21" class="  ">File Transfer</ion-item>
+            <div class="item item-body " id="page2-list-item-container9">
+                <button id="page2-button8" class=" button button-positive  button-block ">Download File</button>
+                <button id="page2-button21" class=" button button-positive  button-block ">Upload File</button>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='Geolocation'" id="page2-card210">
+            <ion-item id="page2-list-item22" class="  ">Geolocation</ion-item>
+            <div class="item item-body " id="page2-list-item-container10">
+                <p id="page2-markdown8" style="margin-top:0px;color:#000000;" class=" ">Current Position is
+                    <strong>XXX, XXX</strong>
+                </p>
+                <button id="page2-button9" class=" button button-positive  button-block ">Get Current Position</button>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='Globalization'" id="page2-card211">
+            <ion-item id="page2-list-item23" class="  ">Globalization</ion-item>
+            <div class="item item-body " id="page2-list-item-container11">
+                <button id="page2-button10" class=" button button-positive  button-block ">Get Language</button>
+                <button id="page2-button22" class=" button button-positive  button-block ">Get Locale</button>
+                <button id="page2-button23" class=" button button-positive  button-block ">Get Date Pattern</button>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='InAppBrowser'" id="page2-card212">
+            <ion-item id="page2-list-item24" class="  ">InAppBrowser</ion-item>
+            <div class="item item-body " id="page2-list-item-container12">
+                <button id="page2-button11" class=" button button-positive  button-block " ng-click="launchInAppBrowser()">Launch In App Browser</button>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='Media'" id="page2-card213">
+            <ion-item id="page2-list-item25" class="  ">Media</ion-item>
+            <div class="item item-body " id="page2-list-item-container13">
+                <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="page2-video1" class=" ">
+                    <iframe src="https://www.youtube.com/embed/lTLTs2ZA2JQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+                <div class="spacer" style="width: 268px; height: 19px;"></div>
+                <div id="page2-button-bar1" class=" button-bar ">
+                    <button id="page2-button25" class=" button button-positive  button-block icon ion-ios-play-outline "></button>
+                    <button id="page2-button26" class=" button button-positive  button-block icon ion-ios-pause-outline "></button>
+                    <button id="page2-button27" class=" button button-positive  button-block icon ion-stop "></button>
+                </div>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='Media Capture'" id="page2-card214">
+            <ion-item id="page2-list-item26" class="  ">Media Capture</ion-item>
+            <div class="item item-body " id="page2-list-item-container14">
+                <button id="page2-button13" class=" button button-positive  button-block icon-left ion-android-microphone ">Start Recording</button>
+                <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="page2-video2" class=" ">
+                    <iframe src="https://www.youtube.com/embed/lTLTs2ZA2JQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+                <div id="page2-button-bar2" class=" button-bar ">
+                    <button id="page2-button29" class=" button button-positive  button-block icon ion-ios-play-outline "></button>
+                    <button id="page2-button30" class=" button button-positive  button-block icon ion-ios-pause-outline "></button>
+                    <button id="page2-button31" class=" button button-positive  button-block icon ion-stop "></button>
+                </div>
+            </div>
+        </div>
+        <div class="list card " ng-if="cordovaFeatureName=='Network Information'" id="page2-card215">
+            <ion-item id="page2-list-item27" class="  ">Network Information</ion-item>
+            <div class="item item-body " id="page2-list-item-container15">
+                <p id="page2-markdown13" style="margin-top:0px;color:#000000;" class=" ">Network Status :
+                    <strong>XXX</strong>
+                </p>
+                <button id="page2-button14" class=" button button-positive  button-block ">Get Network Status</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
